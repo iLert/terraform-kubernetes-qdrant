@@ -123,6 +123,11 @@ resource "kubernetes_stateful_set" "this" {
             value = "/qdrant/init/.qdrant-initialized"
           }
 
+          # env {
+          #   name  = "QDRANT__TELEMETRY_DISABLED"
+          #   value = "true"
+          # }
+
           lifecycle {
             pre_stop {
               exec {

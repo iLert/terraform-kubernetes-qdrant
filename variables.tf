@@ -11,16 +11,19 @@ variable "name" {
 }
 
 variable "replicas" {
-  type    = number
-  default = 2
+  type        = number
+  description = "Replicas count for the Qdrant instances"
+  default     = 2
 }
 
 variable "memory_limit" {
-  type    = string
-  default = "128Mi"
+  type        = string
+  description = "Memory limit for the Qdrant instances"
+  default     = "128Mi"
 }
 
 variable "storage_size" {
-  type    = string
-  default = "10Gi"
+  type        = string
+  description = "Storage size for the Qdrant instances"
+  default     = "10Gi"
 }
