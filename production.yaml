@@ -1,0 +1,6 @@
+cluster:
+  consensus:
+    tick_period_ms: 100
+  enabled: true
+  p2p:
+    port: 6335
