@@ -10,7 +10,7 @@ variable "name" {
   default     = "qdrant"
 }
 
-variable "replicas" {
+variable "replica_count" {
   type        = number
   description = "Replicas count for the Qdrant instances"
   default     = 2
@@ -26,4 +26,10 @@ variable "storage_size" {
   type        = string
   description = "Storage size for the Qdrant instances"
   default     = "10Gi"
+}
+
+variable "qdrant_version" {
+  type        = string
+  description = "The Qdrant version"
+  default     = "latest"
 }

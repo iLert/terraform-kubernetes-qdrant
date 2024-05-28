@@ -11,7 +11,7 @@ resource "kubernetes_stateful_set" "this" {
   spec {
     service_name           = kubernetes_service.this-headless.metadata[0].name
     pod_management_policy  = "Parallel"
-    replicas               = var.replicas
+    replicas               = var.replica_count
     revision_history_limit = 10
 
     update_strategy {
@@ -105,7 +105,7 @@ resource "kubernetes_stateful_set" "this" {
 
         container {
           name              = "qdrant"
-          image             = "docker.io/qdrant/qdrant:v1.8.4"
+          image             = "docker.io/qdrant/qdrant:${var.qdrant_version}"
           image_pull_policy = "IfNotPresent"
           command           = ["/bin/bash", "-c", "/qdrant/config/initialize.sh"]
 
