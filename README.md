@@ -13,10 +13,12 @@ Create a `main.tf` file with the following content:
 ```terraform
 module "qdrant" {
   source       = "iLert/qdrant/kubernetes"
-  version      = "0.1.0"
+  version      = "1.0.0"
   name         = "qdrant"
   namespace    = "default"
   storage_size = "10Gi"
+  replica_count    = 3
+  qdrant_version   = "latest"
 }
 ```
 
@@ -33,13 +35,14 @@ No modules.
 
 ## Inputs
 
-| Name                                                                     | Description                             | Type     | Default   | Required |
-| ------------------------------------------------------------------------ | --------------------------------------- | -------- | --------- | :------: |
-| <a name="input_name"></a> [name](#input\_name)                           | Kubernetes resources name               | `string` | `qdrant`  |    no    |
-| <a name="input_namespace"></a> [namespace](#input\_namespace)            | Kubernetes namespace                    | `string` | `default` |    no    |
-| <a name="input_replicas"></a> [replicas](#input\_replicas)               | Replicas count for the Qdrant instances | `number` | `2`       |    no    |
-| <a name="input_memory_limit"></a> [memory\_limit](#input\_memory\_limit) | Memory limit for the Qdrant instances   | `string` | `128Mi`   |    no    |
-| <a name="input_storage_size"></a> [storage\_size](#input\_storage\_size) | Storage size for the Qdrant instances   | `string` | `10Gi`    |    no    |
+| Name                                                                         | Description                             | Type     | Default   | Required |
+| ---------------------------------------------------------------------------- | --------------------------------------- | -------- | --------- | :------: |
+| <a name="input_name"></a> [name](#input\_name)                               | Kubernetes resources name               | `string` | `qdrant`  |    no    |
+| <a name="input_namespace"></a> [namespace](#input\_namespace)                | Kubernetes namespace                    | `string` | `default` |    no    |
+| <a name="input_memory_limit"></a> [memory\_limit](#input\_memory\_limit)     | Memory limit for the Qdrant instances   | `string` | `128Mi`   |    no    |
+| <a name="input_storage_size"></a> [storage\_size](#input\_storage\_size)     | Storage size for the Qdrant instances   | `string` | `10Gi`    |    no    |
+| <a name="input_replica_count"></a> [storage\_size](#input\_replica\_count)   | Replicas count for the Qdrant instances | `number` | `2`       |    no    |
+| <a name="input_qdrant_version"></a> [storage\_size](#input\_qdrant\_version) | The Qdrant version                      | `string` | `latest`  |    no    |
 
 ## Outputs
 
