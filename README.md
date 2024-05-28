@@ -12,13 +12,13 @@ Create a `main.tf` file with the following content:
 
 ```terraform
 module "qdrant" {
-  source       = "iLert/qdrant/kubernetes"
-  version      = "1.0.0"
-  name         = "qdrant"
-  namespace    = "default"
-  storage_size = "10Gi"
-  replica_count    = 3
-  qdrant_version   = "latest"
+  source         = "iLert/qdrant/kubernetes"
+  version        = "1.0.0"
+  name           = "qdrant"
+  namespace      = "default"
+  storage_size   = "10Gi"
+  replica_count  = 3
+  qdrant_version = "latest"
 }
 ```
 
